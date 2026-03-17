@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ | bridge — Discover Your Sanctuary</title>
+  <meta name="description" content="bridgeへのよくあるご質問。初めてのご来店、施術内容、英語対応まで。あなたの不安を、言葉で解消します。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Noto+Serif+JP:wght@200;300;400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --cream:     #faf8f4;
+      --cream2:    #f3f0ea;
+      --ink:       #1a1916;
+      --ink-mid:   rgba(26,25,22,0.5);
+      --ink-soft:  rgba(26,25,22,0.32);
+      --ink-ghost: rgba(26,25,22,0.1);
+      --gold:      #a8865a;
+      --gold-warm: #c49b6b;
+      --gold-pale: rgba(168,134,90,0.09);
+      --gold-line: rgba(168,134,90,0.25);
+      --line-green:#06C755;
+      --serif:     'Cormorant Garamond','Noto Serif JP',Georgia,serif;
+      --sans:      'Jost',sans-serif;
+      --ease:      cubic-bezier(0.4,0,0.2,1);
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{background:var(--cream);color:var(--ink);font-family:var(--sans);font-weight:300;line-height:1.8;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+
+    /* HEADER */
+    header{position:fixed;top:0;left:0;right:0;z-index:200;height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(20px,5vw,60px);background:rgba(250,248,244,0.94);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--ink-ghost)}
+    .logo{font-family:var(--serif);font-size:1.2rem;font-weight:400;letter-spacing:.18em;color:var(--ink);text-decoration:none;transition:color .4s}
+    .logo:hover{color:var(--gold)}
+    nav{display:flex;gap:clamp(10px,2vw,24px);align-items:center}
+    nav a{font-family:var(--sans);font-size:.58rem;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-mid);text-decoration:none;transition:color .3s;position:relative;padding-bottom:2px}
+    nav a::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease)}
+    nav a:hover{color:var(--ink)}
+    nav a:hover::after,nav a.active::after{transform:scaleX(1)}
+    nav a.active{color:var(--ink)}
+    .hbg{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
+    .hbg span{display:block;width:22px;height:1px;background:var(--ink-mid);transition:all .3s}
+    .mob{display:none;position:fixed;top:60px;left:0;right:0;bottom:0;background:rgba(250,248,244,.98);backdrop-filter:blur(20px);z-index:199;flex-direction:column;align-items:center;justify-content:center;gap:36px}
+    .mob.open{display:flex}
+    .mob a{font-family:var(--serif);font-size:1.8rem;font-weight:300;letter-spacing:.1em;color:var(--ink-mid);text-decoration:none;transition:color .3s}
+    .mob a:hover{color:var(--gold)}
+
+    /* HERO */
+    .hero{padding-top:60px;min-height:55vh;display:grid;place-items:center;text-align:center;position:relative;overflow:hidden}
+    .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 60%,rgba(168,134,90,.05) 0%,transparent 70%);pointer-events:none}
+    .hero::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:1px;height:56px;background:linear-gradient(to bottom,transparent,var(--gold-line))}
+    .hi{display:flex;flex-direction:column;align-items:center;gap:18px;padding:clamp(48px,8vw,80px) clamp(20px,5vw,40px) 80px}
+    .eyebrow{font-family:var(--sans);font-size:.6rem;font-weight:400;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);opacity:0;animation:up .9s .1s forwards}
+    .h-title{font-family:var(--serif);font-size:clamp(2rem,5.5vw,4rem);font-weight:300;line-height:1.2;letter-spacing:.02em;color:var(--ink);opacity:0;animation:up .9s .25s forwards}
+    .h-title em{font-style:italic;color:var(--gold-warm)}
+    .h-title-en{font-family:var(--serif);font-style:italic;font-size:clamp(.9rem,2vw,1.15rem);font-weight:300;color:var(--ink-mid);letter-spacing:.04em;opacity:0;animation:up .9s .4s forwards}
+    .h-desc{font-family:'Noto Serif JP',var(--serif);font-size:.84rem;font-weight:200;color:var(--ink-mid);line-height:2.2;letter-spacing:.05em;max-width:460px;opacity:0;animation:up .9s .55s forwards}
+    .badges{display:flex;flex-wrap:wrap;gap:10px 18px;justify-content:center;opacity:0;animation:up .9s .7s forwards}
+    .badge{display:inline-flex;align-items:center;gap:7px;font-family:var(--sans);font-size:.63rem;font-weight:300;letter-spacing:.12em;color:var(--ink-mid)}
+    .badge::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--gold);flex-shrink:0}
+
+    /* LAYOUT */
+    .wrap{max-width:780px;margin:0 auto;padding:0 clamp(20px,5vw,40px)}
+
+    /* CHAPTER */
+    .chapter{padding:clamp(52px,7vw,84px) 0;border-top:1px solid var(--ink-ghost)}
+    .chapter-head{display:grid;grid-template-columns:auto 1fr;gap:0 20px;align-items:start;margin-bottom:40px}
+    .ch-num{font-family:var(--serif);font-size:3.2rem;font-weight:300;font-style:italic;line-height:1;color:var(--ink-ghost);letter-spacing:-.02em;user-select:none}
+    .ch-lbl{padding-top:4px}
+    .ch-en{font-family:var(--sans);font-size:.58rem;font-weight:400;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:5px}
+    .ch-ja{font-family:'Noto Serif JP',var(--serif);font-size:1.1rem;font-weight:300;letter-spacing:.06em;color:var(--ink);line-height:1.5;display:block}
+
+    /* NOTICE */
+    .notice{border-left:2px solid var(--gold-line);padding:14px 18px;margin-bottom:30px;background:var(--gold-pale)}
+    .notice p{font-family:'Noto Serif JP',var(--serif);font-size:.8rem;font-weight:200;line-height:2;color:var(--ink-mid)}
+    .notice .en{font-family:var(--serif);font-style:italic;font-size:.74rem;color:var(--ink-soft);display:block;margin-top:5px}
+
+    /* FAQ */
+    .faq{border-bottom:1px solid var(--ink-ghost)}
+    .faq-btn{width:100%;background:none;border:none;cursor:pointer;text-align:left;padding:clamp(16px,2.5vw,22px) 0;display:flex;align-items:flex-start;gap:14px;transition:opacity .3s}
+    .faq-btn:hover{opacity:.68}
+    .faq-ql{font-family:var(--serif);font-style:italic;font-size:.82rem;font-weight:300;color:var(--gold);flex-shrink:0;margin-top:3px;width:14px}
+    .faq-qb{flex:1}
+    .faq-qj{font-family:'Noto Serif JP',var(--serif);font-size:.88rem;font-weight:300;color:var(--ink);line-height:1.75;display:block}
+    .faq-qe{font-family:var(--serif);font-style:italic;font-size:.74rem;color:var(--ink-soft);display:block;margin-top:3px}
+    .faq-arr{flex-shrink:0;width:18px;height:18px;position:relative;margin-top:4px}
+    .faq-arr::before,.faq-arr::after{content:'';position:absolute;background:var(--ink-soft);transition:all .35s}
+    .faq-arr::before{width:10px;height:1px;top:50%;left:50%;transform:translate(-50%,-50%)}
+    .faq-arr::after{width:1px;height:10px;top:50%;left:50%;transform:translate(-50%,-50%)}
+    .faq.open .faq-arr::after{transform:translate(-50%,-50%) scaleY(0);opacity:0}
+    .faq-body{max-height:0;overflow:hidden;transition:max-height .5s var(--ease)}
+    .faq.open .faq-body{max-height:800px}
+    .faq-bi{padding:0 0 clamp(18px,3vw,26px) 28px}
+    .faq-aj{font-family:'Noto Serif JP',var(--serif);font-size:.83rem;font-weight:200;line-height:2.2;color:var(--ink-mid);display:block;white-space:pre-line;word-break:break-word;overflow-wrap:break-word}
+    .faq-ae{font-family:var(--serif);font-style:italic;font-size:.74rem;color:var(--ink-soft);line-height:2;display:block;margin-top:12px;padding-top:12px;border-top:1px solid var(--ink-ghost)}
+    .faq-link{color:var(--gold);text-decoration:none;border-bottom:1px solid var(--gold-line);transition:opacity .3s}
+    .faq-link:hover{opacity:.7}
+
+    /* CITY TAB */
+    .city-tabs{display:flex;gap:2px;margin-bottom:28px}
+    .city-tab{background:none;border:1px solid var(--ink-ghost);cursor:pointer;font-family:var(--sans);font-size:.6rem;font-weight:400;letter-spacing:.2em;text-transform:uppercase;padding:9px 22px;color:var(--ink-soft);transition:all .3s}
+    .city-tab:first-child{border-radius:1px 0 0 1px}
+    .city-tab:last-child{border-radius:0 1px 1px 0}
+    .city-tab.active{background:var(--ink);border-color:var(--ink);color:var(--cream)}
+    .city-panel{display:none}
+    .city-panel.active{display:block}
+
+    /* LOCATION */
+    .loc{padding:18px 0;border-bottom:1px solid var(--ink-ghost)}
+    .loc:last-of-type{border-bottom:none}
+    .loc-name{font-family:var(--serif);font-size:.76rem;font-weight:400;letter-spacing:.12em;color:var(--gold);display:block;margin-bottom:6px}
+    .loc-addr{font-family:'Noto Serif JP',var(--serif);font-size:.8rem;font-weight:200;color:var(--ink-mid);line-height:1.9;display:block}
+    .loc-acc{font-family:var(--sans);font-size:.68rem;font-weight:300;color:var(--ink-soft);letter-spacing:.04em;display:block;margin-top:4px}
+    .loc-hours{font-family:var(--sans);font-size:.64rem;font-weight:300;letter-spacing:.1em;color:var(--gold);display:block;margin-top:3px}
+    .loc-map{display:inline-flex;align-items:center;gap:5px;font-family:var(--sans);font-size:.6rem;font-weight:400;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-soft);text-decoration:none;margin-top:8px;border-bottom:1px solid var(--ink-ghost);padding-bottom:1px;transition:color .3s,border-color .3s}
+    .loc-map:hover{color:var(--gold);border-color:var(--gold-line)}
+    .sched-note{margin-top:24px;text-align:center;padding:18px;border:1px solid var(--ink-ghost)}
+    .sched-note p{font-family:'Noto Serif JP',var(--serif);font-size:.76rem;font-weight:200;color:var(--ink-soft);line-height:2}
+    .sched-note a{color:var(--gold);text-decoration:none;border-bottom:1px solid var(--gold-line)}
+    .sched-note a:hover{opacity:.7}
+
+    /* CTA */
+    .cta{background:var(--cream2);border-top:1px solid var(--ink-ghost);border-bottom:1px solid var(--ink-ghost);padding:clamp(60px,8vw,96px) clamp(20px,5vw,40px);text-align:center}
+    .cta-ey{font-family:var(--sans);font-size:.58rem;font-weight:400;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:14px}
+    .cta-t{font-family:var(--serif);font-size:clamp(1.5rem,4vw,2.5rem);font-weight:300;line-height:1.4;letter-spacing:.02em;color:var(--ink);margin-bottom:12px}
+    .cta-s{font-family:'Noto Serif JP',var(--serif);font-size:.8rem;font-weight:200;color:var(--ink-mid);line-height:2.2;margin-bottom:34px;letter-spacing:.04em}
+    .cta-s .en{font-family:var(--serif);font-style:italic;font-size:.74rem;color:var(--ink-soft);display:block;margin-top:6px}
+    .btn-line{display:inline-flex;align-items:center;gap:10px;background:var(--line-green);color:#fff;text-decoration:none;padding:13px 34px;font-family:var(--sans);font-size:.7rem;font-weight:400;letter-spacing:.18em;text-transform:uppercase;transition:all .3s;border-radius:1px}
+    .btn-line:hover{background:#05b04b;transform:translateY(-2px);box-shadow:0 8px 24px rgba(6,199,85,.18)}
+    .btn-line svg{width:17px;height:17px;flex-shrink:0}
+
+    /* FOOTER */
+    footer{padding:clamp(44px,6vw,72px) clamp(20px,5vw,60px);display:flex;flex-direction:column;align-items:center;gap:18px;background:var(--cream);border-top:1px solid var(--ink-ghost)}
+    .f-logo{font-family:var(--serif);font-size:1.25rem;font-weight:300;letter-spacing:.2em;color:var(--ink-mid)}
+    .f-tag{font-family:var(--serif);font-style:italic;font-size:.74rem;color:var(--ink-soft);letter-spacing:.1em}
+    .f-nav{display:flex;flex-wrap:wrap;gap:10px 22px;justify-content:center;max-width:600px;margin:0 auto}
+    .f-nav a{font-family:var(--sans);font-size:.6rem;font-weight:300;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft);text-decoration:none;transition:color .3s}
+    .f-nav a:hover{color:var(--gold)}
+    .f-nav a.cur{color:var(--ink)}
+    .f-copy{font-size:.58rem;font-weight:300;letter-spacing:.14em;color:var(--ink-soft)}
+
+    /* FLOAT */
+    .floats{position:fixed;bottom:28px;right:24px;display:flex;flex-direction:column;gap:12px;z-index:300}
+    .fl{width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 4px 18px rgba(26,25,22,.12);transition:transform .3s,box-shadow .3s}
+    .fl:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(26,25,22,.18)}
+    .fl-line{background:var(--line-green)}
+    .fl-ig{background:radial-gradient(circle at 30% 107%,#fdf497 0%,#fd5949 45%,#d6249f 60%,#285AEB 90%)}
+    .fl svg{width:20px;height:20px}
+
+    /* ANIMATION */
+    @keyframes up{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+    .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+    .reveal.in{opacity:1;transform:none}
+
+    @media(max-width:720px){
+      nav{display:none}
+      .hbg{display:flex}
+      .ch-num{font-size:2.4rem}
+      /* answer text: pre-line on narrow screens keeps explicit breaks but wraps naturally */
+      .faq-aj{white-space:pre-line;word-break:break-word;overflow-wrap:break-word}
+      .faq-ae{word-break:break-word;overflow-wrap:break-word}
+      /* city tabs: allow wrapping on very narrow screens */
+      .city-tabs{flex-wrap:wrap}
+      .city-tab{flex:1 1 auto;text-align:center}
+      /* notice strip: tighter on mobile */
+      .notice{padding:12px 14px}
+      /* faq answer indent reduced */
+      .faq-bi{padding-left:20px}
+      /* loc cards */
+      .loc-addr,.loc-acc{font-size:.76rem}
+      /* CTA title */
+      .cta-t{font-size:1.4rem}
+      /* hero badges: single column feel */
+      .badges{gap:8px 14px}
+    }
+    @media(max-width:380px){
+      .faq-qj{font-size:.82rem}
+      .ch-num{font-size:2rem}
+      .city-tab{padding:8px 12px;font-size:.55rem}
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<!-- Nav order: Menu → Profile → Review → Place → FAQ → Diagnosis (user journey logic) -->
+<header>
+  <a href="https://hub.personalhairstylist.info" class="logo">bridge</a>
+  <nav>
+    <a href="https://hub.personalhairstylist.info">Information</a>
+    <a href="https://takahair-bridge.github.io/bridge-menu/">Menu</a>
+    <a href="https://takahair-bridge.github.io/bridge-profile/">Profile</a>
+    <a href="https://takahair-bridge.github.io/bridge-review/">Review</a>
+    <a href="https://takahair-bridge.github.io/bridge-place/">Place</a>
+    <a href="#" class="active">FAQ</a>
+    <a href="https://takahair-bridge.github.io/bridge-diagnosis/index.html">Diagnosis</a>
+  </nav>
+  <button class="hbg" id="hbg" aria-label="メニュー">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<div class="mob" id="mob">
+  <a href="https://hub.personalhairstylist.info">Information</a>
+  <a href="https://takahair-bridge.github.io/bridge-menu/">Menu</a>
+  <a href="https://takahair-bridge.github.io/bridge-profile/">Profile</a>
+  <a href="https://takahair-bridge.github.io/bridge-review/">Review</a>
+  <a href="https://takahair-bridge.github.io/bridge-place/">Place</a>
+  <a href="#">FAQ</a>
+  <a href="https://takahair-bridge.github.io/bridge-diagnosis/index.html">Diagnosis</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hi">
+    <span class="eyebrow">Frequently Asked Questions</span>
+    <h1 class="h-title">知らなかっただけで、<br><em>ずっと聞きたかった</em>こと。</h1>
+    <p class="h-title-en">Everything you've always wanted to ask.</p>
+    <p class="h-desc">初めての場所には、必ず「聞けなかった不安」がある。<br>ここに、言葉にならなかった疑問への答えを。</p>
+    <!-- ❷ バッジから「初回カウンセリング込み120分」を削除 -->
+    <div class="badges">
+      <span class="badge">一日限定 5名様</span>
+      <span class="badge">施術後 1週間保証</span>
+      <span class="badge">English OK</span>
+      <span class="badge">Google ★ 5.0</span>
+    </div>
+  </div>
+</section>
+
+<main>
+<div class="wrap">
+
+  <!-- ════ CH 1: FIRST VISIT ════ -->
+  <section class="chapter reveal">
+    <div class="chapter-head">
+      <span class="ch-num">01</span>
+      <div class="ch-lbl">
+        <span class="ch-en">First Visit</span>
+        <span class="ch-ja">初めてのご来店について</span>
+      </div>
+    </div>
+
+    <!-- ❹ 時間Q→メニューリンク＋「急がないで」 -->
+    <div class="faq">
+      <button class="faq-btn" aria-expanded="false">
+        <span class="faq-ql">Q</span>
+        <span class="faq-qb">
+          <span class="faq-qj">施術時間はどのくらいかかりますか？</span>
+          <span class="faq-qe">How long does an appointment take?</span>
+        </span>
+        <span class="faq-arr"></span>
+      </button>
+      <div class="faq-body"><div class="faq-bi">
+        <span class="faq-aj">メニューによって異なります。詳しくは<a href="https://takahair-bridge.github.io/bridge-menu/" class="faq-link">Menuページ</a>をご覧ください。
+
+ただ一つお伝えしたいのは、特に初回はゆっくりお時間をとっています。
+髪の変化は、あなたにとって大切な時間。
+どうか急がないでいてください。</span>
+        <span class="faq-ae">Treatment time varies by menu — please see the <a href="https://takahair-bridge.github.io/bridge-menu/" class="faq-link">Menu page</a> for details. What we can say is that we always set aside ample time, especially for your first visit. This is your moment. There is no rush.</span>
+      </div></div>
+    </div>
+
+    <!-- ❺ 新規目線に変更 + ❸ 文言修正 -->
+    <div class="faq">
+      <button class="faq-btn" aria-expanded="false">
+        <span class="faq-ql">Q</span>
+        <span class="faq-qb">
+          <span class="faq-qj">どんな髪型にしたいか、うまく伝えられるか不安です。</span>
+          <span class="faq-qe">I'm not sure how to express what I want.</span>
+        </span>
+        <span class="faq-arr"></span>
+      </button>
+      <div class="faq-body"><div class="faq-bi">
+        <span class="faq-aj">大丈夫です。はっきりしたイメージがなくても、まったく構いません。
+
+「なんとなく変えたい」「今の状態が好きじゃない」
+そのくらいのことで十分です。
+
+スマホに保存した写真があれば見せてもらえると助かりますが、
+なくても大丈夫。一緒に見つけていくことが、bridgeの最初の仕事です。
+
+はじめてお会いするので、いろいろと聞かせてください。
+その時間も、施術のうちです。</span>
+        <span class="faq-ae">No clear image in mind? That's perfectly fine. "I want something different" or "I'm not happy with how things are" — that's more than enough to start with. A photo helps, but it's not required. Finding the right direction together is where we begin. Since it's our first time meeting, I'll ask you lots of questions — that time is part of the treatment.</span>
+      </div></div>
+    </div>
+
+    <!-- ➕ NEW: 写真がなくてもいい？ -->
+    <div class="faq">
+      <button class="faq-btn" aria-expanded="false">
+        <span class="faq-ql">Q</span>
+        <span class="faq-qb">
+          <span class="faq-qj">参考になる写真がなくても来ていいですか？</span>
+          <span class="faq-qe">Can I come even if I don't have a reference photo?</span>
+        </span>
+        <span class="faq-arr"></span>
+      </button>
+      <div class="faq-body"><div class="faq-bi">
+        <span class="faq-aj">もちろんです。写真があると共有しやすくなることは確かですが、
+なくても困りません。
+
+「どんな朝を過ごしているか」「どんな服が好きか」——
+そういった話の中から、あなたらしいスタイルは見えてきます。
+手ぶらで来てください。</span>
+        <span class="faq-ae">Of course. A photo helps us get on the same page faster, but it's never required. "What's your morning routine like?" "What kind of clothes do you wear?" — from conversations like these, your ideal style naturally takes shape. Please come as you are.</span>
+      </div></div>
+    </div>
+
+    <div class="faq">
+      <button class="faq-btn" aria-expanded="false">
+        <span class="faq-ql">Q</span>
+        <span class="faq-qb">
+          <span class="faq-qj">予約はどのくらい前から取ればいいですか？</span>
+          <span class="faq-qe">How far in advance should I book?</span>
+        </span>
+        <span class="faq-arr"></span>
+      </button>
+      <div class="faq-body"><div class="faq-bi">
+        <span class="faq-aj">bridgeは一日に5名様限定でご案内しています。
+お一人おひとりに十分な時間を届けるために。
+
+早めのご予約をおすすめします。
+まずは気軽にLINEからご連絡ください。</span>
+        <span class="faq-ae">We limit bookings to 5 guests per day, so early reservations are recommended. A simple LINE message is the easiest way to get started.</span>
+      </div></div>
+    </div>
+
+    <!-- ➕ NEW: 施術中の会話 -->
+    <div class="faq">
+      <button class="faq-btn" aria-expanded="false">
+        <span class="faq-ql">Q</span>
+        <span class="faq-qb">
+          <span class="faq-qj">施術中、ずっと会話しなければいけませんか？</span>
+          <span class="faq-qe">Do I have to make conversation during the appointment?</span>
+        </span>
+        <span class="faq-arr"></span>
+      </button>
+      <div class="faq-body"><div class="faq-bi">
+        <span class="faq-aj">いいえ。静かに過ごしたいときは、そのままで構いません。
+
+「今日は少し疲れていて」「ゆっくりしたい気分で」
+そう伝えてもらえれば、無理に話しかけません。
+bridgeはあなたのペースで過ごせる場所です。</span>
+        <span class="faq-ae">Not at all. If you'd prefer quiet, simply let us know — "I'm a bit tired today" or "I'd like some peace" is enough. We won't push conversation. Bridge is a space where you set the pace.</span>
+      </div></div>
+    </div>
+
+    <!-- ➕ NEW: 追加メニューを勧められる不安 -->
+    <div class="faq">
+      <button class="faq-btn" aria-expanded="false">
+        <span class="faq-ql">Q</span>
+        <span class="faq-qb">
+          <span class="faq-qj">断りにくい追加メニューを勧められないか心配です。</span>
+          <span class="faq-qe">I'm worried about being pressured into extra services.</span>
+        </span>
+        <span class="faq-arr"></span>
+      </button>
+      <div class="faq-body"><div class="faq-bi">
+        <span class="faq-aj">ご安心ください。bridgeはコースメニュー制で、最初にお支払い金額の上限をお伝えしています。
+
+施術が増えることはありません。
+むしろ、あなたの髪の状態を見て「これは今日必要ない」と判断したメニューは、
+どんどん外していきます。減っていくことはあっても、増えることはない。
+
+それがbridgeの設計です。
+
+実は私自身、追加メニューを勧められることが苦手で、
+何度も嫌な思いをしてきました。
+だから、同じ思いをさせたくなくて、この仕組みにしています。
+
+商品のご購入はご案内することがありますが、
+それも「こういうものがあります」という形でお伝えするだけです。</span>
+        <span class="faq-ae">Please don't worry. Bridge works on a course menu system — the maximum price is clear from the beginning, and it never goes up. In fact, if we feel a particular step isn't necessary for your hair that day, we'll remove it. The price only ever stays the same or goes down.
+
+Honestly, I've had many uncomfortable experiences with upselling myself. That's exactly why I designed things this way — I never want you to feel that pressure here.
+
+We may occasionally mention a product we think would help your hair at home, but always as a gentle suggestion, never a push.</span>
+      </div></div>
+    </div>
+
+  </section>
+
+
+  <!-- ════ CH 2: TREATMENT ════ -->
+  <section class="chapter reveal">
+    <div class="chapter-head">
+      <span class="ch-num">02</span>
+      <div class="ch-lbl">
+        <span class="ch-en">Treatment & Results</span>
+        <span class="ch-ja">施術・仕上がりについて</span>
+      </div>
+    </div>
+
+    <!-- ❻ ダメージQ 処理剤・全コーストリートメント込みに変更 -->
+    <div class="faq">
+      <button class="faq-btn" aria-expanded="false">
+        <span class="faq-ql">Q</span>
+        <span class="faq-qb">
+          <span class="faq-qj">ダメージが心配です。施術で髪が傷まないか不安です。</span>
+          <span class="faq-qe">I'm worried about hair damage. Is treatment safe for my hair?</span>
+        </span>
+        <span class="faq-arr"></span>
+      </button>
+      <div class="faq-body"><div class="faq-bi">
+        <span class="faq-aj">ご安心ください。bridgeではカラーやパーマの際に処理剤を使用し、ダメージを最小限に抑えながら施術しています。
+
+また、全コースにトリートメントが含まれています。
+傷ませることより、今より良くすることを前提に、メニューを設計しているからです。
+
+施術後のホームケアについても一緒に考えますので、お気軽にご相談ください。</span>
+        <span class="faq-ae">We use protective treatments during color and perm services to minimize damage. Every course menu includes a care treatment — because our goal is always to leave your hair in better condition than when you arrived. We'll also talk through home care together, so please feel free to ask.</span>
+      </div></div>
+    </div>
+
+    <!-- ❼「持続」Q 削除済み。ここには白髪Qを移動（❽） -->
+    <div class="faq">
+      <button class="faq-btn" aria-expanded="false">
+        <span class="faq-ql">Q</span>
+        <span class="faq-qb">
+          <span class="faq-qj">白髪は気になるけれど、暗くなりすぎるのは嫌です。明るい色は楽しめますか？</span>
+          <span class="faq-qe">I'm concerned about gray but don't want to go too dark. Can I still enjoy brighter color?</span>
+        </span>
+        <span class="faq-arr"></span>
+      </button>
+      <div class="faq-body"><div class="faq-bi">
+        <span class="faq-aj">もちろんです。白髪を「隠す」のではなく「活かす」デザインもご提案しています。
+透明感のある脱白髪染めや上品なハイライトで、
+明るく、肌映えのするスタイルへ。
+
+白髪はあなたの個性。それを武器にする方法があります。</span>
+        <span class="faq-ae">Absolutely. We offer designs that embrace gray rather than hide it. Through sheer coverage techniques and elegant highlights, we achieve a bright, sophisticated look that beautifully complements your skin tone. Gray can become your signature.</span>
+      </div></div>
+    </div>
+
+    <!-- ❽ うねり・パサつきを施術Qとして自然に統合 -->
+    <div class="faq">
+      <button class="faq-btn" aria-expanded="false">
+        <span class="faq-ql">Q</span>
+        <span class="faq-qb">
+          <span class="faq-qj">髪のうねりやパサつきが気になっています。改善できますか？</span>
+          <span class="faq-qe">I've been noticing more frizz and dryness. Can this be improved?</span>
+        </span>
+        <span class="faq-arr"></span>
+      </button>
+      <div class="faq-body"><div class="faq-bi">
+        <span class="faq-aj">はい。髪質の変化には、それぞれ原因があります。
+内部密度を高める「オーダーメイド髪質改善」や
+地肌を整える「深層ヘッドクレンジング」など、
+状態に合わせたアプローチをご提案します。
+
+まずはカウンセリングで、今の髪の状態を一緒に確認しましょう。</span>
+        <span class="faq-ae">Yes. Frizz and dryness each have their own causes. Through customized texture treatments and deep scalp cleansing, we'll find the right approach for your specific hair condition. Let's start by looking at your hair together during the consultation.</span>
+      </div></div>
+    </div>
+
+    <div class="faq">
+      <button class="faq-btn" aria-expanded="false">
+        <span class="faq-ql">Q</span>
+        <span class="faq-qb">
+          <span class="faq-qj">仕上がりに「なんか違う」と感じたらどうすれば？</span>
+          <span class="faq-qe">What if the result doesn't feel quite right?</span>
+        </span>
+        <span class="faq-arr"></span>
+      </button>
+      <div class="faq-body"><div class="faq-bi">
+        <span class="faq-aj">一週間以内にLINEでご連絡ください。
+原因を丁寧に追究して、一緒に解決します。
+
+「なんか違う」と思いながら、黙って帰ることが一番悲しいことです。
+あなたの正直な気持ちを、最後まで受け取ります。</span>
+        <span class="faq-ae">Please reach out within one week. We'll look into the cause together and find the best path forward. Leaving quietly with that "something's off" feeling is the last thing we want. Your honesty is always welcome here.</span>
+      </div></div>
+    </div>
+  </section>
+
+
+  <!-- ════ CH 3: CANCELLATION ════ -->
+  <section class="chapter reveal">
+    <div class="chapter-head">
+      <span class="ch-num">03</span>
+      <div class="ch-lbl">
+        <span class="ch-en">Booking & Cancellation</span>
+        <span class="ch-ja">ご予約・キャンセルについて</span>
+      </div>
+    </div>
+    <div class="notice">
+      <p>bridgeでは、お互いの時間を誠実に扱うために、キャンセルポリシーを設けています。<br>詳しくは<a href="https://takahair-bridge.github.io/bridge-menu/#caution" class="faq-link" target="_blank" rel="noopener">メニューページの注意事項</a>もあわせてご確認ください。</p>
+      <span class="en">At bridge, we have a cancellation policy to honor both your time and ours. For full details, please also see the <a href="https://takahair-bridge.github.io/bridge-menu/#caution" class="faq-link" target="_blank" rel="noopener">Caution section on the Menu page</a>.</span>
+    </div>
+    <div class="faq">
+      <button class="faq-btn" aria-expanded="false">
+        <span class="faq-ql">Q</span>
+        <span class="faq-qb">
+          <span class="faq-qj">キャンセルポリシーについて教えてください。</span>
+          <span class="faq-qe">What is your cancellation policy?</span>
+        </span>
+        <span class="faq-arr"></span>
+      </button>
+      <div class="faq-body"><div class="faq-bi">
+        <span class="faq-aj">24時間以内のキャンセルは、予約メニューの100%をいただいています。やむをえない事情がある場合は、できる限り早めにご連絡ください。
+
+連絡なしのキャンセルが続く場合は、お断りする場合があります。
+
+これはルールではなく、あなたの時間と私の時間を双方が誠実に扱うための設計です。
+
+詳細は<a href="https://takahair-bridge.github.io/bridge-menu/#caution" class="faq-link" target="_blank" rel="noopener">メニューページの注意事項</a>をご覧ください。</span>
+        <span class="faq-ae">Cancellations within 24 hours: 100% of the booked menu will be charged. For unavoidable circumstances, please reach out as soon as you can. Repeated no-shows may result in declined future bookings. This is not a penalty — it is how we treat each other's time with honesty. For full details, see the <a href="https://takahair-bridge.github.io/bridge-menu/#caution" class="faq-link" target="_blank" rel="noopener">Menu page</a>.</span>
+      </div></div>
+    </div>
+  </section>
+
+
+  <!-- ════ CH 4: INTERNATIONAL ════ -->
+  <section class="chapter reveal">
+    <div class="chapter-head">
+      <span class="ch-num">04</span>
+      <div class="ch-lbl">
+        <span class="ch-en">International Guests</span>
+        <span class="ch-ja">海外からのお客様・英語対応</span>
+      </div>
+    </div>
+    <div class="notice">
+      <p>Looking for an English-OK hair salon in Osaka during your trip to Japan?<br>（日本旅行中に英語対応のできる美容院をお探しの方へ。）</p>
+    </div>
+
+    <div class="faq">
+      <button class="faq-btn" aria-expanded="false">
+        <span class="faq-ql">Q</span>
+        <span class="faq-qb">
+          <span class="faq-qj">英語でのカウンセリングはできますか？</span>
+          <span class="faq-qe">Do you offer consultations in English?</span>
+        </span>
+        <span class="faq-arr"></span>
+      </button>
+      <div class="faq-body"><div class="faq-bi">
+        <span class="faq-aj">はい、英語での対応が可能です（ネイティブではないのですが）。
+お客様の髪とご希望を丁寧にヒアリングして、理想のスタイルを形にします。
+海外からのゲストも、多くの方にご利用いただいています。</span>
+        <span class="faq-ae">Yes — my English isn't perfect, but I can communicate clearly enough to understand you well. Many international guests have trusted us and left feeling truly understood.</span>
+      </div></div>
+    </div>
+
+    <div class="faq">
+      <button class="faq-btn" aria-expanded="false">
+        <span class="faq-ql">Q</span>
+        <span class="faq-qb">
+          <span class="faq-qj">旅行の合間に、ヘッドマッサージとブローだけ受けられますか？</span>
+          <span class="faq-qe">Can I book just a head massage and blowdry during my trip?</span>
+        </span>
+        <span class="faq-arr"></span>
+      </button>
+      <div class="faq-body"><div class="faq-bi">
+        <span class="faq-aj">大歓迎です。旅の疲れを癒やすヘッドマッサージは、海外ゲストにも大変人気です。
+プライベートな空間でゆっくりリフレッシュして、
+残りの旅をもっと楽しんでいただけますように。</span>
+        <span class="faq-ae">Highly recommended. Our head massage is very popular with international guests. Refresh yourself in our private, tranquil space — and carry that calm into the rest of your journey.</span>
+      </div></div>
+    </div>
+  </section>
+
+
+  <!-- ════ CH 5: ACCESS ════ -->
+  <section class="chapter reveal">
+    <div class="chapter-head">
+      <span class="ch-num">05</span>
+      <div class="ch-lbl">
+        <span class="ch-en">Location & Access</span>
+        <span class="ch-ja">サロンへのアクセス</span>
+      </div>
+    </div>
+
+    <div class="city-tabs">
+      <button class="city-tab active" data-city="osaka">Osaka</button>
+      <button class="city-tab" data-city="tokyo">Tokyo / Kanagawa</button>
+    </div>
+
+    <!-- OSAKA -->
+    <div class="city-panel active" id="panel-osaka">
+      <div class="notice">
+        <p>北浜・淀屋橋エリアで、静かに過ごせる場所をお探しの方へ。</p>
+        <span class="en">For those seeking a quiet moment in the Kitahama and Yodoyabashi area of Osaka.</span>
+      </div>
+      <div class="faq">
+        <button class="faq-btn" aria-expanded="false">
+          <span class="faq-ql">Q</span>
+          <span class="faq-qb">
+            <span class="faq-qj">北浜・淀屋橋のサロンはどんな雰囲気ですか？</span>
+            <span class="faq-qe">What is the atmosphere like at the Kitahama salon?</span>
+          </span>
+          <span class="faq-arr"></span>
+        </button>
+        <div class="faq-body"><div class="faq-bi">
+          <span class="faq-aj">歴史ある北浜の街並みにある、隠れ家のようなアパートメントサロンです。
+大型店の喧騒を離れ、プライベートな空間でおもてなしのひとときを。
+扉を開けた瞬間から、少しだけ日常から離れられる場所です。</span>
+          <span class="faq-ae">A hidden apartment salon nestled in the historic Kitahama district. Far from the noise of larger salons — a private space where true Japanese omotenashi begins the moment you open the door.</span>
+        </div></div>
+      </div>
+      <div class="faq">
+        <button class="faq-btn" aria-expanded="false">
+          <span class="faq-ql">Q</span>
+          <span class="faq-qb">
+            <span class="faq-qj">住所とアクセスを教えてください。</span>
+            <span class="faq-qe">Where exactly is the Osaka salon?</span>
+          </span>
+          <span class="faq-arr"></span>
+        </button>
+        <div class="faq-body"><div class="faq-bi">
+          <div class="loc" style="border:none;padding-top:0">
+            <span class="loc-name">bridge · 北浜</span>
+            <span class="loc-addr">大阪市中央区高麗橋2-5-10<br>オーバンビル 2F re:cloud</span>
+            <span class="loc-acc">淀屋橋駅（御堂筋線・京阪）徒歩5分 / 北浜駅（堺筋線・京阪）徒歩5分<br>5 min walk from Yodoyabashi or Kitahama Station</span>
+            <span class="loc-hours">火〜土曜営業 / Open Tue–Sat</span>
+            <a href="https://www.google.com/maps/place/%E3%80%90bridge%E3%80%91Hair+salon+Osaka+%E5%8C%97%E6%B5%9C%E3%83%BB%E6%B7%80%E5%B1%8B%E6%A9%8B+%E7%BE%8E%E5%AE%B9%E9%99%A2+English+OK/" class="loc-map" target="_blank" rel="noopener">Google Map →</a>
+          </div>
+          <span class="faq-ae">No dedicated parking. Nearby coin parking is available.</span>
+        </div></div>
+      </div>
+      <div class="faq">
+        <button class="faq-btn" aria-expanded="false">
+          <span class="faq-ql">Q</span>
+          <span class="faq-qb">
+            <span class="faq-qj">周辺でおすすめの場所はありますか？（観光で来た方へ）</span>
+            <span class="faq-qe">Any recommended spots nearby for visitors?</span>
+          </span>
+          <span class="faq-arr"></span>
+        </button>
+        <div class="faq-body"><div class="faq-bi">
+          <span class="faq-aj">北浜・淀屋橋エリアは、大阪の中でも静かで上品なエリアです。
+川沿いのおしゃれなカフェや、中之島の美術館など、
+施術後にゆっくり散策されるお客様も多いですよ。</span>
+          <span class="faq-ae">Kitahama and Yodoyabashi are among Osaka's quieter, more refined neighborhoods. Stylish riverside cafes, the Nakanoshima Museum of Art, and a pleasant canal walk all await after your appointment.</span>
+        </div></div>
+      </div>
+    </div>
+
+    <!-- TOKYO / KANAGAWA -->
+    <div class="city-panel" id="panel-tokyo">
+      <div class="notice">
+        <p>2ヶ月に1度のペースで、東京・神奈川にて出張施術を行っています。<br>最新スケジュールはInstagramまたはLINEでご確認ください。</p>
+        <span class="en">Visiting Tokyo &amp; Kanagawa approximately every two months. Check the latest schedule on Instagram or LINE.</span>
+      </div>
+
+      <div class="loc">
+        <span class="loc-name">THE GARDEN Tokyo · GINZA</span>
+        <span class="loc-addr">東京都中央区銀座7-9-15 GINZAgCUBE 11F</span>
+        <span class="loc-acc">銀座駅（丸の内線・日比谷線・銀座線）徒歩10分<br>10 min walk from Ginza Station</span>
+        <span class="loc-hours">月〜金 / Open Mon–Fri</span>
+        <a href="https://www.google.com/maps/place/%E3%80%90bridge%E3%80%91Hair+salon+Ginza+Tokyo+%E9%8A%80%E5%BA%A7+%E7%BE%8E%E5%AE%B9%E9%99%A2+English+OK/" class="loc-map" target="_blank" rel="noopener">Google Map →</a>
+      </div>
+
+      <div class="loc">
+        <span class="loc-name">Watai · JIYUGAOKA</span>
+        <span class="loc-addr">東京都目黒区緑が丘2-25-7 ラ・クール自由が丘 B棟2F</span>
+        <span class="loc-acc">自由が丘駅（東急東横線・大井町線）徒歩3分<br>3 min walk from Jiyugaoka Station</span>
+        <span class="loc-hours">土・日 / Open Sat–Sun</span>
+        <a href="https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E4%BA%AC%E9%83%BD%E7%9B%AE%E9%BB%92%E5%8C%BA%E7%B7%91%E3%81%8C%E4%B8%982-25-7" class="loc-map" target="_blank" rel="noopener">Google Map →</a>
+      </div>
+
+      <!-- ❾ 武蔵小杉：平日祝日のみ -->
+      <div class="loc">
+        <span class="loc-name">NEUTRAL produce by GARDEN · 武蔵小杉</span>
+        <span class="loc-addr">神奈川県川崎市中原区新丸子東3-1135 GRAND TREE 2F</span>
+        <span class="loc-acc">武蔵小杉駅（東横線・南武線・横須賀線）徒歩4分<br>4 min walk from Musashi-Kosugi Station</span>
+        <span class="loc-hours">国民の祝日（平日のみ）/ National Holidays falling on weekdays</span>
+        <a href="https://www.google.com/maps/search/?api=1&query=%E5%B7%9D%E5%B4%8E%E5%B8%82%E4%B8%AD%E5%8E%9F%E5%8C%BA%E6%96%B0%E4%B8%B8%E5%AD%90%E6%9D%B13-1135+GRAND+TREE" class="loc-map" target="_blank" rel="noopener">Google Map →</a>
+      </div>
+
+      <div class="sched-note">
+        <p>出張スケジュールはSNSまたはLINEにてご確認ください。<br>
+        Visit schedule is posted on <a href="https://www.instagram.com/takahair_bridge/" target="_blank" rel="noopener">Instagram</a> and LINE.</p>
+      </div>
+    </div>
+
+  </section>
+
+</div><!-- /wrap -->
+
+<!-- CTA -->
+<div class="cta">
+  <span class="cta-ey">Still wondering?</span>
+  <h2 class="cta-t">聞けなかったことを、<br>聞ける場所がある。</h2>
+  <p class="cta-s">ここにない疑問も、お気軽にLINEへどうぞ。<br>予約でなくても、相談だけでも。
+    <span class="en">No question is too small. A simple hello is enough to start.</span>
+  </p>
+  <a href="https://lin.ee/KR1qGTc" class="btn-line">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+    LINEで相談する
+  </a>
+</div>
+</main>
+
+<footer>
+  <div class="f-logo">bridge</div>
+  <div class="f-tag">Your hair. Your story. Your bridge.</div>
+  <nav class="f-nav">
+    <a href="https://hub.personalhairstylist.info">Home</a>
+    <a href="https://takahair-bridge.github.io/bridge-lp/">LP</a>
+    <a href="https://takahair-bridge.github.io/bridge-menu/">Menu</a>
+    <a href="https://takahair-bridge.github.io/bridge-profile/">Profile</a>
+    <a href="https://takahair-bridge.github.io/bridge-review/">Review</a>
+    <a href="https://takahair-bridge.github.io/bridge-place/">Place</a>
+    <a href="#" class="cur">FAQ</a>
+    <a href="https://takahair-bridge.github.io/bridge-diagnosis/index.html">Diagnosis</a>
+  </nav>
+  <div class="f-copy">© bridge personal hair salon — Osaka · Kitahama</div>
+</footer>
+
+<div class="floats">
+  <a href="https://lin.ee/KR1qGTc" class="fl fl-line" target="_blank" rel="noopener" aria-label="LINE">
+    <svg viewBox="0 0 24 24" fill="#fff"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+  </a>
+  <a href="https://www.instagram.com/takahair_bridge/" class="fl fl-ig" target="_blank" rel="noopener" aria-label="Instagram">
+    <svg viewBox="0 0 24 24" fill="#fff"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+  </a>
+</div>
+
+<script>
+  document.querySelectorAll('.faq-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq');
+      const isOpen = item.classList.contains('open');
+      const scope = item.closest('.chapter, .city-panel');
+      scope?.querySelectorAll('.faq').forEach(f => {
+        f.classList.remove('open');
+        f.querySelector('.faq-btn')?.setAttribute('aria-expanded','false');
+      });
+      if (!isOpen) { item.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
+    });
+  });
+
+  document.querySelectorAll('.city-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      const city = tab.dataset.city;
+      document.querySelectorAll('.city-tab').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.city-panel').forEach(p => p.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById('panel-' + city).classList.add('active');
+    });
+  });
+
+  const hbg = document.getElementById('hbg');
+  const mob = document.getElementById('mob');
+  hbg.addEventListener('click', () => mob.classList.toggle('open'));
+  mob.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mob.classList.remove('open')));
+
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
