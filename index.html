@@ -200,7 +200,16 @@
       .ch-num{font-size:2rem}
       .city-tab{padding:8px 12px;font-size:.55rem}
     }
-  </style>
+  
+/* ★2026-08-13 追加：英語圏の窓口はInstagram（LINEが使えないため）。
+   日本語表示は一切変えず、英語表示のときだけInstagramへ向ける。 */
+.bg-ig{ background:linear-gradient(45deg,#F58529,#DD2A7B 55%,#8134AF) !important;
+        border-color:transparent !important; }
+.faq-en-cta{ display:none; }
+body.en .faq-en-cta{ display:inline-flex; align-items:center; justify-content:center;
+  background:linear-gradient(45deg,#F58529,#DD2A7B 55%,#8134AF); }
+body.en a.btn-line:not(.faq-en-cta){ display:none; }
+</style>
 </head>
 <body>
 
@@ -616,7 +625,7 @@ Please allow around five hours. Depending on the condition of your hair, we may 
 ブリーチ以外のメニューでは、この手順は必要ありません。</span>
         <span class="faq-ae">Please send photographs before booking.
 
-1. Send a few photos of your hair as it is now, plus a few of the colour you have in mind, via LINE or Instagram DM.
+1. Send a few photos of your hair as it is now, plus a few of the colour you have in mind, via Instagram DM.
 2. TAKA will reply with what is possible, how many sessions it will take, and how long it will need.
 3. Once you are happy with that, we arrange a date.
 
@@ -806,7 +815,9 @@ Exchanging photos first is how we avoid "this isn't what I pictured" on the day.
   <a href="https://lin.ee/KR1qGTc" class="btn-line">
     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
     <span class="faq-qj">LINEで相談する</span>
-    <span class="faq-qe" style="display:none">Chat on LINE</span>
+  </a>
+  <a href="https://www.instagram.com/takahair_bridge/" class="btn-line btn-line-ig faq-en-cta" target="_blank" rel="noopener">
+    <span>Message us on Instagram</span>
   </a>
 </div>
 </main>
